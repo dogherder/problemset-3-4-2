@@ -4,16 +4,19 @@
   "description": "node app",
   "main": "web_app_2.js",
   "scripts": {
-  "start":"node web_app_2.js"
-},
+    "start": "node web_app_2.js"
+  },
   "repository": {
-  "type": "git",
-  "url": ""
-},
+    "type": "git",
+    "url": ""
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
-  "url": ""
-},
-  "homepage": ""
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "mongodb": "^6.5.0"
+  }
 }
