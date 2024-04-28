@@ -14,12 +14,12 @@ http.createServer(function (req, res) {
   console.log('hey')
 }).listen(port);
 
-// const MongoClient = require('mongodb').MongoClient;
-// const mongo_url = "mongodb+srv://dbuser2:dbUser123@cluster0.toauqqw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-// const express = require('express');
-// const app = express();
-// app.use(express.urlencoded());
-// client = new MongoClient(mongo_url);
+const MongoClient = require('mongodb').MongoClient;
+const mongo_url = "mongodb+srv://dbuser2:dbUser123@cluster0.toauqqw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const express = require('express');
+const app = express();
+app.use(express.urlencoded());
+client = new MongoClient(mongo_url);
 
 // function firstCharIsNumber(inputVar) {
 //    var firstChar = inputVar.charAt(0);
