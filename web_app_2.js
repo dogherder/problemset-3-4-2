@@ -40,23 +40,22 @@ app.get('/', function(request, response, next){
    `);
 });
 
-// app.post('/', function(request, response, next){
-
-//    var location = request.body.location;
-//    var val = "";
-//    var responseString = `
-//                            <!DOCTYPE html>
-//                            <html>
-//                            <head>
-//                               <title>Process View</title>
-//                            </head>
-//                            <body>
-//                               <p>You entered 
-//                         `;
-//    var endResponseString = `
-//                            </body>
-//                            </html>
-//                            `;
+app.post('/', function(request, response, next){
+   var location = request.body.location;
+   var val = "";
+   var responseString = `
+                           <!DOCTYPE html>
+                           <html>
+                           <head>
+                              <title>Process View</title>
+                           </head>
+                           <body>
+                              <p>You entered 
+                        `;
+   var endResponseString = `
+                           </body>
+                           </html>
+                           `;
 //    try {
 //       client.connect();
 //       var dbo = client.db("problemset3-4");
@@ -113,8 +112,8 @@ app.get('/', function(request, response, next){
 //    }
 //    catch (err) {
 //       console.log("Database error: " + err);
-//    }
-// });
+   }
+});
 
 
 // app.listen(process.env.PORT || 3000, function(){
