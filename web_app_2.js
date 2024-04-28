@@ -1,18 +1,18 @@
-var http = require('http');
-var url = require('url');
-var port = process.env.PORT || 3000;
-//var port = 8080;   //uncomment to run local
-// console.log("zips.csv file uploaded to Mongo");
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  urlObj = url.parse(req.url,true)
-  id = urlObj.query.id
-   res.write("<h2>Problem Set 3-4 Web App 2</h2>");
-  res.write("Success: Web App Running.");
-  // res.write ("The id is: " + id)
-   res.end();
-  console.log('hey')
-}).listen(port);
+// var http = require('http');
+// var url = require('url');
+// var port = process.env.PORT || 3000;
+// //var port = 8080;   //uncomment to run local
+// // console.log("zips.csv file uploaded to Mongo");
+// http.createServer(function (req, res) {
+//   res.writeHead(200, {'Content-Type': 'text/html'});
+//   urlObj = url.parse(req.url,true)
+//   id = urlObj.query.id
+//    res.write("<h2>Problem Set 3-4 Web App 2</h2>");
+//   res.write("Success: Web App Running.");
+//   // res.write ("The id is: " + id)
+//    res.end();
+//   console.log('hey')
+// }).listen(port);
 
 const MongoClient = require('mongodb').MongoClient;
 const mongo_url = "mongodb+srv://dbuser2:dbUser123@cluster0.toauqqw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -116,6 +116,6 @@ app.post('/', function(request, response, next){
 });
 
 
-// app.listen(process.env.PORT || 3000, function(){
-//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-// });
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
