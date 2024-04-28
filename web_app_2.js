@@ -74,6 +74,7 @@ app.post('/', function(request, response, next){
       }
       console.log("after firstChar function.");
       val = collection.find(theQuery, theFields).toArray(function(err, items) {
+         console.log("before err check.");
          if (err) {
             console.log("Error: " + err);
             return "error";
