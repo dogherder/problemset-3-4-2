@@ -56,63 +56,63 @@ app.post('/', function(request, response, next){
                            </body>
                            </html>
                            `;
-//    try {
-//       client.connect();
-//       var dbo = client.db("problemset3-4");
-//       var collection = dbo.collection('places');
+   try {
+      client.connect();
+      var dbo = client.db("problemset3-4");
+      var collection = dbo.collection('places');
 
-//       var theQuery;
-//       if (firstCharIsNumber(location)) {
-//          theQuery = {zipcode: location};
-//          theFields = {city:1, zipcode:1};
-//       } else {
-//          theQuery = {city: location};
-//          theFields = {zipcode:1};
-//       }
-//       val = collection.find(theQuery, theFields).toArray(function(err, items) {
-//          if (err) {
-//             console.log("Error: " + err);
-//             return "error";
-//          } else {
-//             if (firstCharIsNumber(location)) {
-//                responseString += request.body.location + `.</p><p>Here's the city associated with ` + request.body.location + `: ` + items[0].city + `.</p>`;
-//                if (items[0].zipcode.length > 1) {
-//                   responseString += `<p>Other ZIP codes of ` + items[0].city + ` include:</p>`;
-//                   responseString += `<ul>`;
-//                   for (i=0; i<items[0].zipcode.length; i++) {
-//                      if (items[0].zipcode[i] != location) {
-//                         responseString += `<li>` + items[0].zipcode[i] + `</li>`;
-//                      }
-//                   }
-//                }
-//                responseString += endResponseString;
-//                response.send(responseString);
-//             } else {
-//                if (items[0].zipcode.length > 2) {
-//                   responseString += request.body.location + `.</p><p>Here are the ZIP codes associated with ` + request.body.location + `:` + `</p>`;
-//                } else if (items[0].zipcode.length == 1) {
-//                   responseString += request.body.location + `.</p><p>Here's the ZIP code associated with ` + request.body.location + `:` + `</p>`;
-//                }
-//                responseString += `<ul>`;
-//                if (items[0].zipcode.length > 1) {
-//                   for (i=0; i<items[0].zipcode.length; i++) {
-//                      if (items[0].zipcode[i] != location) {
-//                         responseString += `<li>` + items[0].zipcode[i] + `</li>`;
-//                      }
-//                   }
-//                } else {
-//                   responseString += `<li>` + items[0].zipcode[0] + `</li>`;
-//                }
-//                responseString += `</ul>`;
-//                responseString += endResponseString;
-//                response.send(responseString);
-//             }
-//          }
-//       })
-//    }
-//    catch (err) {
-//       console.log("Database error: " + err);
-//  }
+      var theQuery;
+      if (firstCharIsNumber(location)) {
+         theQuery = {zipcode: location};
+         theFields = {city:1, zipcode:1};
+      } else {
+         theQuery = {city: location};
+         theFields = {zipcode:1};
+      }
+      val = collection.find(theQuery, theFields).toArray(function(err, items) {
+         if (err) {
+            console.log("Error: " + err);
+            return "error";
+         } else {
+            if (firstCharIsNumber(location)) {
+               responseString += request.body.location + `.</p><p>Here's the city associated with ` + request.body.location + `: ` + items[0].city + `.</p>`;
+               if (items[0].zipcode.length > 1) {
+                  responseString += `<p>Other ZIP codes of ` + items[0].city + ` include:</p>`;
+                  responseString += `<ul>`;
+                  for (i=0; i<items[0].zipcode.length; i++) {
+                     if (items[0].zipcode[i] != location) {
+                        responseString += `<li>` + items[0].zipcode[i] + `</li>`;
+                     }
+                  }
+               }
+               responseString += endResponseString;
+               response.send(responseString);
+            } else {
+               if (items[0].zipcode.length > 2) {
+                  responseString += request.body.location + `.</p><p>Here are the ZIP codes associated with ` + request.body.location + `:` + `</p>`;
+               } else if (items[0].zipcode.length == 1) {
+                  responseString += request.body.location + `.</p><p>Here's the ZIP code associated with ` + request.body.location + `:` + `</p>`;
+               }
+               responseString += `<ul>`;
+               if (items[0].zipcode.length > 1) {
+                  for (i=0; i<items[0].zipcode.length; i++) {
+                     if (items[0].zipcode[i] != location) {
+                        responseString += `<li>` + items[0].zipcode[i] + `</li>`;
+                     }
+                  }
+               } else {
+                  responseString += `<li>` + items[0].zipcode[0] + `</li>`;
+               }
+               responseString += `</ul>`;
+               responseString += endResponseString;
+               response.send(responseString);
+            }
+         }
+      })
+   }
+   catch (err) {
+      console.log("Database error: " + err);
+   }
 });
 
 
