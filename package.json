@@ -1,10 +1,10 @@
 {
   "name": "webapp2",
   "version": "1.0.0",
-  "description": "node app ",
+  "description": "node app",
   "main": "web_app_2.js",
   "scripts": {
-  "start": "node web_app_2.js"
+  "start":"node web_app_2.js"
 },
   "repository": {
   "type": "git",
