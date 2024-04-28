@@ -41,7 +41,7 @@ app.get('/', function(request, response, next){
 });
 
 app.post('/', function(request, response, next){
-   console.log("fin app.post.");
+   console.log("in app.post.");
    var location = request.body.location;
    var val = "";
    var responseString = `
@@ -58,7 +58,9 @@ app.post('/', function(request, response, next){
                            </html>
                            `;
    try {
+      console.log("after try, before connect.");
       client.connect();
+      console.log("after connect.");
       var dbo = client.db("problemset3-4");
       var collection = dbo.collection('places');
 
@@ -70,6 +72,7 @@ app.post('/', function(request, response, next){
          theQuery = {city: location};
          theFields = {zipcode:1};
       }
+      console.log("after firstChar function.");
       val = collection.find(theQuery, theFields).toArray(function(err, items) {
          if (err) {
             console.log("Error: " + err);
