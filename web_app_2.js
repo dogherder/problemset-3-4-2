@@ -40,7 +40,7 @@ app.get('/', function(request, response, next){
    `);
 });
 
-app.post('/', function(request, response, next){
+app.post('/', async function(request, response, next){
    console.log("in app.post.");
    var location = request.body.location;
    var val = "";
@@ -75,7 +75,7 @@ app.post('/', function(request, response, next){
          console.log("theQuery: " + theQuery.city);
       }
       console.log("after firstChar function.");
-      val = collection.find(theQuery, theFields).toArray(function(err, items) {
+      val = await collection.find(theQuery, theFields).toArray(function(err, items) {
          console.log("before err check.");
          if (err) {
             console.log("Error: " + err);
