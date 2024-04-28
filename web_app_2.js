@@ -41,6 +41,7 @@ app.get('/', function(request, response, next){
 });
 
 app.post('/', function(request, response, next){
+   console.log("fin app.post.");
    var location = request.body.location;
    var val = "";
    var responseString = `
