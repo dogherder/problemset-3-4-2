@@ -68,11 +68,11 @@ app.post('/', function(request, response, next){
       if (firstCharIsNumber(location)) {
          theQuery = {zipcode: location};
          theFields = {city:1, zipcode:1};
-         console.log("theQuery: " + theQuery);
+         console.log("theQuery: " + theQuery.zipcode);
       } else {
          theQuery = {city: location};
          theFields = {zipcode:1};
-         console.log("theQuery: " + theQuery);
+         console.log("theQuery: " + theQuery.city);
       }
       console.log("after firstChar function.");
       val = collection.find(theQuery, theFields).toArray(function(err, items) {
