@@ -75,6 +75,7 @@ app.post('/', function(request, response, next){
             return "error";
          } else {
             if (firstCharIsNumber(location)) {
+		console.log("first char is number.");
                responseString += request.body.location + `.</p><p>Here's the city associated with ` + request.body.location + `: ` + items[0].city + `.</p>`;
                if (items[0].zipcode.length > 1) {
                   responseString += `<p>Other ZIP codes of ` + items[0].city + ` include:</p>`;
@@ -88,6 +89,7 @@ app.post('/', function(request, response, next){
                responseString += endResponseString;
                response.send(responseString);
             } else {
+		console.log("first char is not number.");
                if (items[0].zipcode.length > 2) {
                   responseString += request.body.location + `.</p><p>Here are the ZIP codes associated with ` + request.body.location + `:` + `</p>`;
                } else if (items[0].zipcode.length == 1) {
