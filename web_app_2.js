@@ -72,6 +72,7 @@ app.post('/', function(request, response, next){
       } else {
          theQuery = {city: location};
          theFields = {zipcode:1};
+         console.log("theQuery: " + theQuery);
       }
       console.log("after firstChar function.");
       val = collection.find(theQuery, theFields).toArray(function(err, items) {
