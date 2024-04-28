@@ -68,6 +68,7 @@ app.post('/', function(request, response, next){
       if (firstCharIsNumber(location)) {
          theQuery = {zipcode: location};
          theFields = {city:1, zipcode:1};
+         console.log("theQuery: " + theQuery);
       } else {
          theQuery = {city: location};
          theFields = {zipcode:1};
