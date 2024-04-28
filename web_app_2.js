@@ -11,7 +11,7 @@ http.createServer(function (req, res) {
   res.write("Success: Web App Running.");
   // res.write ("The id is: " + id)
    res.end();
-  console.log('hey8')
+  console.log('hey')
 }).listen(port);
 
 // const MongoClient = require('mongodb').MongoClient;
