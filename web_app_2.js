@@ -21,10 +21,10 @@ const app = express();
 app.use(express.urlencoded());
 client = new MongoClient(mongo_url);
 
-// function firstCharIsNumber(inputVar) {
-//    var firstChar = inputVar.charAt(0);
-//    return !isNaN(firstChar);
-// }
+function firstCharIsNumber(inputVar) {
+   var firstChar = inputVar.charAt(0);
+   return !isNaN(firstChar);
+}
 
 // app.get('/', function(request, response, next){
 // 	response.send(`
